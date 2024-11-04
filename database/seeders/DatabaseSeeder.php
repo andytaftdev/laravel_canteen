@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,5 +25,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@idn.com',
             'role' => 'admin',
         ]);
+
+        // Product::factory()->create([
+        //     'name' => 'admin',
+        //     'description' => 'Product kita ni wak',
+        //     'stock' => 202,
+        //     'price' => '200.000',
+        //     'image' => 'urlto',
+        // ]);
     }
 }

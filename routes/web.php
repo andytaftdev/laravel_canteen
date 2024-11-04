@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -15,6 +18,10 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('pages.dashboard');
 });
+
+Route::resource('user', UserController::class);
+Route::resource('product', ProductController::class);
+
 
 // Route::get('/login', function () {
 //     return view('pages.auth.login');

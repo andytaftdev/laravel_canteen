@@ -22,6 +22,25 @@
                     </li>
                 </ul>
             </li>
-]
+
+        </ul>
+        <ul class="sidebar-menu">
+            <li class="menu-header">User</li>
+            <li class="nav-item dropdown ">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>User</span></a>
+                <ul class="dropdown-menu">
+                    <li class='{{ Request::is('user.index') ? 'active' : '' }}'>
+                        <a class="nav-link"
+                            href="{{ route('user.index') }}">Dashboard User</a>
+                    </li>
+                    <li class="{{ Request::is('dashboard-ecommerce-dashboard') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('dashboard-ecommerce-dashboard') }}">Create User</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
     </aside>
 </div>
