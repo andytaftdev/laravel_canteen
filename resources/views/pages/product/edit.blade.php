@@ -35,7 +35,8 @@
                 </p>
 
                 <div class="row">
-                    <form action="{{ route('product.store') }}" method="POST" class="col-12 ">
+                    <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="col-12 ">
+                        @method('PUT')
                         @csrf
                         <div class="card">
                             <div class="card-header">
@@ -46,17 +47,17 @@
 
                                 <div class="form-group">
                                     <label>Product name</label>
-                                    <input type="text" name="name"
+                                    <input type="text" name="name" value="{{$product->name}}"
                                         class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input type="text" name="description"
+                                    <input type="text" name="description" value="{{$product->description}}"
                                         class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Product Stock</label>
-                                    <input type="number" name="stock"
+                                    <input type="number" name="stock" value="{{$product->stock}}"
                                         class="form-control">
                                 </div>
                                 <div class="form-group">
@@ -69,6 +70,42 @@
                                         </div>
                                         <input type="text" name="price"
                                             class="form-control currency">
+                                    </div>
+                                </div>
+                                <div class="section-title">Select User Role</div>
+                                <div class="form-group">
+                                    <label class="form-label"></label>
+                                    <div class="selectgroup w-100">
+                                        <label class="selectgroup-item">
+                                            <input type="radio"
+                                                name="category"
+                                                value="snack"
+                                                class="selectgroup-input"
+                                                @if($product->category == 'snack')
+                                                checked
+                                                @endif>
+                                            <span class="selectgroup-button">snack</span>
+                                        </label>
+                                        <label class="selectgroup-item">
+                                            <input type="radio"
+                                                name="category"
+                                                value="food"
+                                                class="selectgroup-input"
+                                                @if($product->category == 'food')
+                                                checked
+                                                @endif>
+                                            <span class="selectgroup-button">food</span>
+                                        </label>
+                                        <label class="selectgroup-item">
+                                            <input type="radio"
+                                                name="category"
+                                                value="drink"
+                                                class="selectgroup-input"
+                                                @if($product->category == 'drink')
+                                                checked
+                                                @endif>
+                                            <span class="selectgroup-button">drink</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-group ">

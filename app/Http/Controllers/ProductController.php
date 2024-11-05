@@ -67,7 +67,22 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+
+        $input = $request->all();
+
+        if($request->hasFile('image'))
+            {
+                $folder = 'image/product';
+                $gambar = $request->file('image');
+                $nama_gambar = $gambar->getClientOriginalName();
+                $request->file('image')->storeAs($folder, $nama_gambar, 'public');
+                $input['image'] = $nama_gambar;
+            }
+
+            $product->update($input);
+
+        return redirect()->route('product.index')->with('success', 'Product updated successfully');
+
     }
 
     /**

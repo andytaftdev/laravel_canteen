@@ -69,6 +69,34 @@
                                             class="form-control currency">
                                     </div>
                                 </div>
+                                <div class="section-title">Select User Role</div>
+                                <div class="form-group">
+                                    <label class="form-label"></label>
+                                    <div class="selectgroup w-100">
+                                        <label class="selectgroup-item">
+                                            <input type="radio"
+                                                name="category"
+                                                value="snack"
+                                                class="selectgroup-input"
+                                                checked="">
+                                            <span class="selectgroup-button">snack</span>
+                                        </label>
+                                        <label class="selectgroup-item">
+                                            <input type="radio"
+                                                name="category"
+                                                value="food"
+                                                class="selectgroup-input">
+                                            <span class="selectgroup-button">food</span>
+                                        </label>
+                                        <label class="selectgroup-item">
+                                            <input type="radio"
+                                                name="category"
+                                                value="drink"
+                                                class="selectgroup-input">
+                                            <span class="selectgroup-button">drink</span>
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="form-group ">
                                     <label class="col-form-label text-md-right ">Thumbnail</label>
                                     <div class="col-sm-12 col-md-7">

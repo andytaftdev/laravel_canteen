@@ -72,7 +72,7 @@
                                         </tr>
                                         @foreach ($product as $item)
                                         <tr>
-                                            <form id="delete-form" action="{{route('user.destroy', $item->id)}}" method="POST">
+                                            <form id="delete-form" action="{{route('product.destroy', $item->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->integer('stock');
             $table->string('price');
+            $table->enum('category', ['food', 'drink', 'snack'])->default('food');
             $table->string('image');
             $table->timestamps();
         });
